@@ -17,7 +17,7 @@ func TestTwoSum(t *testing.T) {
 		{"simple", []int{1, 2, 3}, 3, []int{0, 1}, nil},
 		{"simple reorder", []int{1, 3, 2}, 3, []int{0, 2}, nil},
 		{"bigger numbers", []int{30, 15, 10, 15, 30}, 30, []int{1, 3}, nil},
-		{"not found", []int{30, 14, 10, 15, 30}, 30, nil, errors.New("not found")},
+		{"not found", []int{30, 14, 10, 15, 30}, 30, nil, ErrNotFound},
 	}
 
 	for _, tt := range tests {
