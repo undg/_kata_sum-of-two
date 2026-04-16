@@ -6,4 +6,8 @@ describe(`twoSum()`, () => {
         expect(twoSum([1, 3, 2], 3)).toEqual([0, 2])
         expect(twoSum([30, 15, 10, 15, 30], 30)).toEqual([1, 3])
     })
+
+    it(`should return "not found" when no pair sums to target`, () => {
+        expect(twoSum([30, 14, 10, 15, 30], 30)).toEqual("not found")
+    })
 })
