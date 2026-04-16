@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"reflect"
 	"testing"
 )
@@ -8,26 +9,28 @@ import (
 // Import the implementation here.
 // Since I don't see a go file yet, I'll assume it will be in the same package or imported.
 // For now, I'll define a placeholder for the purpose of creating the test structure.
-func twoSum(nums []int, target int) []int {
+func twoSum(nums []int, target int) ([]int, error) {
 	// Placeholder implementation - this will be replaced by the actual logic
-	return nil
+	return nil, nil
 }
 
 func TestTwoSum(t *testing.T) {
 	tests := []struct {
-		nums   []int
-		target int
-		want   []int
+		nums    []int
+		target  int
+		want    []int
+		wantErr error
 	}{
-		{[]int{1, 2, 3}, 3, []int{0, 1}},
-		{[]int{1, 3, 2}, 3, []int{0, 2}},
-		{[]int{30, 15, 10, 15, 30}, 30, []int{1, 3}},
+		{[]int{1, 2, 3}, 3, []int{0, 1}, nil},
+		{[]int{1, 3, 2}, 3, []int{0, 2}, nil},
+		{[]int{30, 15, 10, 15, 30}, 30, []int{1, 3}, nil},
+		{[]int{30, 14, 10, 15, 30}, 30, nil, errors.New("not found")},
 	}
 
 	for _, tt := range tests {
-		got := twoSum(tt.nums, tt.target)
-		if !reflect.DeepEqual(got, tt.want) {
-			t.Errorf("twoSum(%v, %d) = %v; want %v", tt.nums, tt.target, got, tt.want)
+		got, err := twoSum(tt.nums, tt.target)
+		if !reflect.DeepEqual(got, tt.want) || !errors.Is(err, tt.wantErr) {
+			t.Errorf("twoSum(%v, %d) = %v; want %v, %v", tt.nums, tt.target, got, tt.want, tt.wantErr)
 		}
 	}
 }
