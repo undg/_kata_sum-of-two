@@ -13,7 +13,7 @@ class TestTwoSum(unittest.TestCase):
     def test_two_sum_larger_numbers(self):
         self.assertEqual(two_sum([30, 15, 10, 15, 30], 30), [1, 3])
 
-    def test_two_sum_larger_not_found(self):
+    def test_two_sum_not_found(self):
         self.assertEqual(two_sum([30, 14, 10, 15, 30], 30), "not found")
 
 

@@ -22,6 +22,8 @@ def two_sum(nums: list[int], target: int) -> list[int] | str:
     hash_rest: dict[int, int] = {}
     for i, n in enumerate(nums):
         if n in hash_rest:
-            return [i, hash_rest[n]]
+            return [hash_rest[n], i]
+        else:
+            hash_rest[target - n] = i
 
     return "not found"
