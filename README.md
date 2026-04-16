@@ -22,6 +22,12 @@ Or run tests on file changes with the included watch script:
 ./go/test-watch.sh
 ```
 
+Or if you have installed
+
+```bash
+cd go && gotestsum --watch
+```
+
 ### Python
 
 ```bash
