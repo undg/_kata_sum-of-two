@@ -11,22 +11,25 @@ Out: [0, 1]
 ## How to run tests
 
 ### Go
+
 ```bash
 go test ./go/...
 ```
 
 ### Python
+
 ```bash
-python3 py/test_index.py
+python3 -m pytest py/test_main.py
 ```
 
 ### Lua
+
 ```bash
-lua lua/index_test.lua
+busted init_test.lua
 ```
 
 ### JavaScript (Bun)
-```bash
-cd js && bun test
-```
 
+```bash
+bun test
+```
