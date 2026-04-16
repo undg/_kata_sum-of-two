@@ -16,6 +16,12 @@ Out: [0, 1]
 go test ./go/...
 ```
 
+Or run tests on file changes with the included watch script:
+
+```bash
+./go/test-watch.sh
+```
+
 ### Python
 
 ```bash
