@@ -6,7 +6,7 @@ import (
 
 var ErrNotFound = errors.New("not found")
 
-// O(n*n)
+// O(n²)
 func twoSumSkip(nums []int, target int) ([]int, error) {
 	for i, n := range nums {
 		tailIndexStart := i + 1
@@ -20,6 +20,7 @@ func twoSumSkip(nums []int, target int) ([]int, error) {
 	return nil, ErrNotFound
 }
 
+// O(n)
 func twoSum(nums []int, target int) ([]int, error) {
 	hashTable := make(map[int]int)
 	for i, n := range nums {
