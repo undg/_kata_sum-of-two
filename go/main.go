@@ -26,9 +26,9 @@ func twoSum(nums []int, target int) ([]int, error) {
 		ii, ok := hashTable[target-n]
 		if ok {
 			return []int{ii, i}, nil
-		} else {
-			hashTable[n] = i
 		}
+
+		hashTable[n] = i
 	}
 	return nil, ErrNotFound
 }
